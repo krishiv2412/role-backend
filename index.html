@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Role-Based Work Management</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #f4f4f9; }
+    .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .hidden { display: none; }
+    button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+    input, select { padding: 8px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>User & Work Management System</h1>
+
+  <!-- Auth Section -->
+  <div id="auth-section" class="card">
+    <h2>Login / Register</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="btn-login">Login</button>
+    <button id="btn-register">Register</button>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard-section" class="card hidden">
+    <h2>Welcome, <span id="user-email"></span> (<span id="user-role">...</span>)</h2>
+    <button id="btn-logout">Logout</button>
+    <hr>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" class="hidden">
+      <h3>Admin Panel: Manage User Roles</h3>
+      <div id="users-list"></div>
+    </div>
+
+    <!-- INCREMENTOR PANEL -->
+    <div id="incrementor-panel" class="hidden">
+      <h3>Add Work Item</h3>
+      <input type="text" id="work-title" placeholder="Work Title">
+      <button id="btn-add-work">Add Work</button>
+    </div>
+
+    <!-- WORK LIST VIEW -->
+    <h3>Work List</h3>
+    <ul id="work-list"></ul>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
